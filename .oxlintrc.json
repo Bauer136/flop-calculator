@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "ignorePatterns": ["dist", "coverage", "playwright-report", "test-results"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  },
+  "overrides": [
+    {
+      "files": ["src/engine/**"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              { "name": "react", "message": "src/engine must stay pure: no UI libraries." },
+              { "name": "react-dom", "message": "src/engine must stay pure: no UI libraries." },
+              { "name": "zustand", "message": "src/engine must stay pure: no UI state." },
+              { "name": "recharts", "message": "src/engine must stay pure: no UI libraries." },
+              { "name": "comlink", "message": "Worker wiring belongs in src/worker." },
+              { "name": "idb-keyval", "message": "Persistence belongs in src/ui." }
+            ],
+            "patterns": [
+              {
+                "group": [
+                  "react/*",
+                  "react-dom/*",
+                  "zustand/*",
+                  "**/ui",
+                  "**/ui/**",
+                  "**/worker",
+                  "**/worker/**"
+                ],
+                "message": "src/engine must not import from the UI or worker layers."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

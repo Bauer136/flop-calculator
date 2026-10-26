@@ -1,0 +1,208 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tabList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tabButton,
+.tabActive {
+  border: none;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  padding: 6px 12px;
+}
+
+.tabActive {
+  border-bottom-color: var(--accent);
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.h3 {
+  font-size: 0.95em;
+  margin-bottom: 4px;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.columns > * {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.compactList {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.scroll {
+  max-height: 420px;
+  overflow: auto;
+}
+
+.dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.activeRow td {
+  font-weight: 600;
+}
+
+.barCell {
+  width: 40%;
+}
+
+.bar {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.inlineBar {
+  display: inline-block;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 4px;
+  background: var(--range-fill);
+  vertical-align: middle;
+}
+
+/* Card grid (next card, hotness) */
+.cardGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow-x: auto;
+}
+
+.cardGridRow {
+  display: grid;
+  grid-template-columns: repeat(13, minmax(38px, 1fr));
+  gap: 3px;
+}
+
+.cardGridCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.cardGridEmpty {
+  opacity: 0.35;
+}
+
+.cardGridName {
+  font-weight: 700;
+  font-size: 0.85em;
+}
+
+.cardGridValue {
+  font-size: 0.85em;
+  min-height: 1.3em;
+}
+
+/* Equity matrix */
+.eqMatrix {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  gap: 2px;
+  max-width: 560px;
+}
+
+.eqCell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background: var(--cell-offsuit);
+  font-size: clamp(8px, 1.4vw, 11px);
+  line-height: 1.1;
+  overflow: hidden;
+}
+
+.eqName {
+  font-weight: 600;
+  color: var(--text-strong);
+}
+
+.eqValue {
+  font-variant-numeric: tabular-nums;
+}
+
+.chart {
+  width: 100%;
+  min-height: 280px;
+}
+
+/* Groups and custom stats */
+.groupList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.groupItem {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pie {
+  max-width: 320px;
+}
+
+.cond {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-left: 2px solid var(--border);
+  padding-left: 8px;
+}
+
+.num {
+  width: 4.5em;
+}
+
+.breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  align-items: start;
+}

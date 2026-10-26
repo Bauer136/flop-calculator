@@ -1,0 +1,73 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.slots {
+  display: flex;
+  gap: 4px;
+}
+
+.slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4em;
+  height: 2.2em;
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+  color: var(--text-muted);
+  font-size: 0.85em;
+}
+
+.slot:nth-child(4) {
+  margin-left: 6px;
+}
+
+.slotFilled {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.slotFilled:nth-child(4) {
+  margin-left: 6px;
+}
+
+.deck {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.deckRow {
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  gap: 3px;
+}
+
+.deckCard {
+  padding: 2px 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  min-width: 0;
+}
+
+.onBoard,
+.onBoard:hover:not(:disabled) {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.dead,
+.dead:hover:not(:disabled) {
+  background: var(--surface-2);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.textInput {
+  width: 10em;
+}

@@ -1,0 +1,23 @@
+.card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.md {
+  min-width: 2.4em;
+  height: 2.2em;
+  font-size: 1.05em;
+}
+
+.sm {
+  min-width: 1.9em;
+  height: 1.6em;
+  font-size: 0.9em;
+}

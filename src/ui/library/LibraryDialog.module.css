@@ -1,0 +1,113 @@
+.dialog {
+  width: min(900px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dialog::backdrop {
+  background: #0008;
+}
+
+.head,
+.foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.save {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 12px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: auto;
+}
+
+.categories button {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  max-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.entry {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rangeText {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  color: var(--text-muted);
+  word-break: break-all;
+}
+
+.notes {
+  font-size: 0.9em;
+}
+
+.fileButton {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.fileButton input {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+
+  .categories {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
